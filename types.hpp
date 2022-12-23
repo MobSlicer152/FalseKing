@@ -12,19 +12,20 @@ Abstract:
 
 Author:
 
-    MobSlicer152 19-Dec-2022
+    MobSlicer152 23-Dec-2022
 
 Revision History:
 
-    19-Dec-2022    MobSlicer152
+    23-Dec-2022    MobSlicer152
 
-        Created.
+        Created types.hpp.
 
 --*/
 
-#pragma once
+#ifndef _TYPES_
+#define _TYPES_
 
-#include <cstddef>
+#include <stddef.h>
 
 //
 // Dummy macros
@@ -123,3 +124,5 @@ typedef const UINT64* PCUINT64;
 typedef const UINTPTR* PCUINTPTR;
 typedef const SIZE_T* PCSIZE_T;
 typedef const SSIZE_T* PCSSIZE_T;
+
+#endif // _TYPES_

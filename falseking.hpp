@@ -10,6 +10,10 @@ Abstract:
 
     Global header with basic shared definitions.
 
+Author:
+
+    MobSlicer152 23-Dec-2022
+
 Revision History:
 
     23-Dec-2022    MobSlicer152
@@ -18,12 +22,15 @@ Revision History:
 
 --*/
 
-#pragma once
+#ifndef _FALSEKING_
+#define _FALSEKING_
 
+#include <cerrno>
 #include <chrono>
 #include <cstdio>
 #include <filesystem>
 #include <limits>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -33,30 +40,7 @@ Revision History:
 #include "spdlog/spdlog-inl.h"
 #include "spdlog/fmt/bundled/format-inl.h"
 
+#include "aliases.hpp"
 #include "types.hpp"
 
-namespace Fk
-{
-
-    namespace Chrono
-    {
-        using namespace std::chrono;
-        using namespace std::chrono_literals;
-    }
-
-    namespace Fmt
-    {
-        using namespace fmt;
-    }
-
-    namespace Fs
-    {
-        using namespace std::filesystem;
-    }
-
-    namespace Log
-    {
-        using namespace spdlog;
-    }
-
-}
+#endif // _FALSEKING_
