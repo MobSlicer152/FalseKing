@@ -35,7 +35,6 @@ namespace Fk
     protected:
 
         SDL_Window* m_handle;
-        SDL_Renderer* m_renderer;
         std::string m_title;
         INT m_width;
         INT m_height;
@@ -79,18 +78,6 @@ namespace Fk
         noexcept
         {
             return m_handle;
-        }
-
-        //
-        // Get the renderer
-        //
-
-        SDL_Renderer*
-        GetRenderer()
-        const
-        noexcept
-        {
-            return m_renderer;
         }
 
         //

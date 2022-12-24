@@ -58,16 +58,10 @@ namespace Fk
             SDL_WINDOWPOS_CENTERED,
             width,
             height,
-            SDL_WINDOW_ALLOW_HIGHDPI
+            SDL_WINDOW_ALLOW_HIGHDPI |
+            SDL_WINDOW_RESIZABLE
             );
         FK_ASSERT(m_handle != NULL);
-
-        m_renderer = SDL_CreateRenderer(
-            m_handle,
-            NULL,
-            SDL_RENDERER_ACCELERATED
-            );
-        FK_ASSERT(m_renderer != NULL);
 
         m_title = SDL_GetWindowTitle(m_handle);
         SDL_GetWindowSize(
@@ -104,11 +98,11 @@ namespace Fk
         continueRunning = true;
         while ( SDL_PollEvent(&event) )
         {
-            if (event.window.windowID == m_id)
+            if ( event.window.windowID == m_id )
             {
                 switch ( event.type )
                 {
-                SDL_WINDWOWEVENT_RESIZED:
+                case SDL_WINDOWEVENT_SIZE_CHANGED:
                     FK_LOG_INFO("Window {} resized from {}x{} to {}x{}",
                         m_title,
                         m_width,
@@ -119,19 +113,14 @@ namespace Fk
                     m_width = event.window.data1;
                     m_height = event.window.data2;
                     break;
-                SDL_WINDOWEVENT_CLOSE:
+                case SDL_WINDOWEVENT_CLOSE:
                     FK_LOG_INFO("Window {} close requested", m_title);
                     continueRunning = false;
                     break;
                 default:
-                    FK_LOG_TRACE("Window {} ignoring event 0x{:x}", m_title, event.type);
+                    FK_LOG_TRACE("Window {} ignoring event {}", m_title, event.type);
                     break;
                 }
-            }
-            else if ( event.type == SDL_QUIT )
-            {
-                FK_LOG_INFO("Quit requested");
-                continueRunning = false;
             }
             else
             {
