@@ -28,9 +28,9 @@ namespace Fk
 {
 
     Window::Window(
-        const std::string& title,
-        INT width,
-        INT height
+        IN const std::string& title,
+        IN INT width,
+        IN INT height
         )
     /*++
 

@@ -47,9 +47,9 @@ namespace Fk
         //
 
         Window(
-            const std::string& title,
-            INT width,
-            INT height
+            IN const std::string& title,
+            IN INT width,
+            IN INT height
             );
 
         //
@@ -123,8 +123,8 @@ namespace Fk
 
         VOID
         GetSize(
-            INT& width,
-            INT& height
+            OUT INT& width,
+            OUT INT& height
             )
         const
         noexcept
