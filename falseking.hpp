@@ -35,10 +35,26 @@ Revision History:
 #include <vector>
 
 #include "box2d/box2d.h"
+
+#include "rtm/macros.h"
 #include "rtm/math.h"
+#include "rtm/matrix3x3d.h"
+#include "rtm/matrix4x4d.h"
+#include "rtm/quatd.h"
+#include "rtm/qvvd.h"
+#include "rtm/scalard.h"
+#include "rtm/type_traits.h"
+#include "rtm/vector4d.h"
+
 #include "SDL3/SDL.h"
-#include "spdlog/spdlog-inl.h"
-#include "spdlog/fmt/bundled/format-inl.h"
+
+#define SPDLOG_HEADER_ONLY
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/daily_file_sink.h"
+#include "spdlog/sinks/msvc_sink.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
+#define FMT_HEADER_ONLY
+#include "spdlog/fmt/bundled/format.h"
 
 #include "aliases.hpp"
 #include "types.hpp"

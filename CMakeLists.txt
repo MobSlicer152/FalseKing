@@ -27,6 +27,7 @@ set(CORE_HEADERS aliases.hpp
                  types.hpp)
 set(CORE_SOURCES window.cpp)
 add_library(Core STATIC ${CORE_HEADERS} ${CORE_SOURCES})
+target_precompile_headers(Core PRIVATE falseking.hpp)
 
 set(GAME_HEADERS game/game.hpp)
 set(GAME_SOURCES game/game.cpp)

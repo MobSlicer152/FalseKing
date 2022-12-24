@@ -51,7 +51,11 @@ Return Value:
 
 --*/
 {
-    Fk::GameInstance = new Fk::Game();
+    Fk::GameInstance = std::make_unique<Fk::Game>(
+        "False King",
+        1024,
+        576
+        );
     Fk::GameInstance->Run();
-    delete Fk::GameInstance;
+    Fk::GameInstance.release();
 }

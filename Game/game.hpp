@@ -40,8 +40,9 @@ namespace Fk
     {
     private:
 
-        std::unique_ptr<Log::logger> m_logger;
-        std::unique_ptr<Window> m_window;
+        std::shared_ptr<Log::logger> m_logger;
+        std::shared_ptr<Window> m_window;
+        BOOLEAN m_running;
 
     public:
 
@@ -49,26 +50,42 @@ namespace Fk
         // Constructor
         //
 
-        Game(const std::string& Title, INT Width, INT Height);
-
-        //
-        // Main loop
-        //
-
-        void Run();
+        Game(
+            const std::string& title,
+            INT width,
+            INT height
+            );
 
         //
         // Destructor
         //
 
-        ~Game();
+        ~Game() = default;
+
+        //
+        // Main loop
+        //
+
+        VOID
+        Run();
+
+        //
+        // Whether the game is running
+        //
+
+        BOOLEAN
+        IsRunning()
+        {
+            return m_running;
+        }
+
     };
 
     //
     // Global game instance
     //
 
-    extern Game* GameInstance;
+    extern std::unique_ptr<Game> GameInstance;
 
 }
 
