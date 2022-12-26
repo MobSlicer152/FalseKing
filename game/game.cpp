@@ -69,7 +69,7 @@ namespace Fk
         FK_ASSERT(SDL_Init(SDL_INIT_VIDEO) == 0);
 
         FK_LOG_INFO("Creating {}x{} window titled {}", width, height, title);
-        m_window = std::unique_ptr<Window>(new Window(
+        m_window = std::unique_ptr<Core::Window>(new Core::Window(
             title,
             width,
             height

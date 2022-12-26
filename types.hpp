@@ -33,7 +33,6 @@ Revision History:
 
 #define IN
 #define OUT
-#define INOUT
 #define OPTIONAL
 
 //

@@ -27,7 +27,7 @@ Revision History:
 
 #include "falseking.hpp"
 
-#include "window.hpp"
+#include "core/window.hpp"
 
 namespace Fk
 {
@@ -41,7 +41,7 @@ namespace Fk
     private:
 
         std::shared_ptr<Log::logger> m_logger;
-        std::shared_ptr<Window> m_window;
+        std::shared_ptr<Core::Window> m_window;
         BOOLEAN m_running;
 
     public:

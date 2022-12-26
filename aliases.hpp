@@ -45,6 +45,11 @@ namespace Fk
         using namespace std::chrono_literals;
     }
 
+    namespace Entity
+    {
+
+    }
+
     namespace Filesystem
     {
         using namespace std::filesystem;

@@ -24,7 +24,7 @@ Revision History:
 
 #include "window.hpp"
 
-namespace Fk
+namespace Fk::Core
 {
 
     Window::Window(

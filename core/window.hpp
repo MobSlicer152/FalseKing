@@ -27,7 +27,7 @@ Revision History:
 
 #include "falseking.hpp"
 
-namespace Fk
+namespace Fk::Core
 {
 
     class Window
