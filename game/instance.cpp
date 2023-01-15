@@ -1,35 +1,25 @@
 /*++
 
-Copyright (c) 2022 MobSlicer152
+Copyright (c) 2023 MobSlicer152
 
 Module Name:
 
-    game.cpp
+    instance.cpp
 
 Abstract:
 
-    This module implements the Game class.
-
-Author:
-
-    MobSlicer152 23-Dec-2022
-
-Revision History:
-
-    23-Dec-2022    MobSlicer152
-
-        Created game.cpp.
+    This module implements the Instance class.
 
 --*/
 
-#include "game.hpp"
+#include "instance.hpp"
 
-namespace Fk
+namespace Fk::Game
 {
 
-    std::unique_ptr<Game> GameInstance;
+    std::unique_ptr<Instance> GlobalInstance;
 
-    Game::Game(
+    Instance::Instance(
         const std::string& title,
         INT width,
         INT height
@@ -77,7 +67,7 @@ namespace Fk
     }
 
     VOID
-    Game::Run()
+    Instance::Run()
     /*++
 
     Routine Description:
@@ -95,6 +85,10 @@ namespace Fk
     --*/
     {
         FK_LOG_INFO("Entering game loop");
+
+        Entity entity;
+
+        entity = m_entityRegistry.create();
 
         m_running = true;
         while ( m_running )

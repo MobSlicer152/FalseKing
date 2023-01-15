@@ -1,6 +1,6 @@
 /*++
 
-Copyright (c) 2022 MobSlicer152
+Copyright (c) 2023 MobSlicer152
 
 Module Name:
 
@@ -10,21 +10,11 @@ Abstract:
 
     Creates the Game instance.
 
-Author:
-
-    MobSlicer152 23-Dec-2022
-
-Revision History:
-
-    23-Dec-2022    MobSlicer152
-
-        Created main.cpp.
-
 --*/
 
 #include "falseking.hpp"
 
-#include "game/game.hpp"
+#include "game/instance.hpp"
 
 INT
 main(
@@ -51,11 +41,11 @@ Return Value:
 
 --*/
 {
-    Fk::GameInstance = std::make_unique<Fk::Game>(
+    Fk::Game::GlobalInstance = std::make_unique<Fk::Game::Instance>(
         "False King",
         1024,
         576
         );
-    Fk::GameInstance->Run();
-    Fk::GameInstance.release();
+    Fk::Game::GlobalInstance->Run();
+    Fk::Game::GlobalInstance.release();
 }

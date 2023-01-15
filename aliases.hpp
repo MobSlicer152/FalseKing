@@ -1,6 +1,6 @@
 /*++
 
-Copyright (c) 2022 MobSlicer142
+Copyright (c) 2023 MobSlicer142
 
 Module Name:
 
@@ -12,12 +12,7 @@ Abstract:
 
 --*/
 
-#ifndef _ALIASES_
-#define _ALIASES_
-
-#ifndef _FALSEKING_
-#error This module is only meant to be included in falseking.hpp
-#endif
+#pragma once
 
 //
 // Assert that a condition is true
@@ -45,9 +40,9 @@ namespace Fk
         using namespace std::chrono_literals;
     }
 
-    namespace Entity
+    namespace Ecs
     {
-
+        using namespace entt;
     }
 
     namespace Filesystem
@@ -71,5 +66,3 @@ namespace Fk
     }
 
 }
-
-#endif // _ALIASES_

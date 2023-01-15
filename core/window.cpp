@@ -1,6 +1,6 @@
 /*++
 
-Copyright (c) 2022 MobSlicer152
+Copyright (c) 2023 MobSlicer152
 
 Module Name:
 
@@ -9,16 +9,6 @@ Module Name:
 Abstract:
 
     This module implements the Window class.
-
-Author:
-
-    23-Dec-2022 MobSlicer152
-
-Revision History:
-
-    23-Dec-2022    MobSlicer152
-
-        Created window.cpp.
 
 --*/
 
@@ -52,6 +42,8 @@ namespace Fk::Core
 
     --*/
     {
+        FK_LOG_TRACE("Creating {}x{} window titled \"{}\"", width, height, title);
+
         m_handle = SDL_CreateWindow(
             title.c_str(),
             SDL_WINDOWPOS_CENTERED,

@@ -34,8 +34,8 @@ set(CORE_HEADERS core/window.hpp)
 set(CORE_SOURCES core/window.cpp)
 add_library(Core STATIC ${CORE_HEADERS} ${CORE_SOURCES})
 
-set(GAME_HEADERS game/game.hpp)
-set(GAME_SOURCES game/game.cpp)
+set(GAME_HEADERS game/instance.hpp)
+set(GAME_SOURCES game/instance.cpp)
 add_library(Game STATIC ${GAME_HEADERS} ${GAME_SOURCES})
 
 set(MAIN_SOURCES main.cpp)

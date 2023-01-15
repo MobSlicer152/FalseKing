@@ -1,47 +1,39 @@
 /*++
 
-Copyright (c) 2022 MobSlicer152
+Copyright (c) 2023 MobSlicer152
 
 Module Name:
 
-    game.hpp
+    instance.hpp
 
 Abstract:
 
-    Declares the Game class and the global Game instance.
-
-Author:
-
-    MobSlicer152 23-Dec-2022
-
-Revision History:
-
-    23-Dec-2022    MobSlicer152
-
-        Created game.hpp.
+    This module declares the game instance class.
 
 --*/
 
-#ifndef _GAME_
-#define _GAME_
+#pragma once
 
 #include "falseking.hpp"
 
 #include "core/window.hpp"
 
-namespace Fk
+#include "entity.hpp"
+
+namespace Fk::Game
 {
 
     //
     // Big class that contains all the other classes
     //
 
-    class Game
+    class Instance
     {
     private:
 
         std::shared_ptr<Log::logger> m_logger;
         std::shared_ptr<Core::Window> m_window;
+        Ecs::basic_registry<Entity> m_entityRegistry;
         BOOLEAN m_running;
 
     public:
@@ -50,7 +42,7 @@ namespace Fk
         // Constructor
         //
 
-        Game(
+        Instance(
             IN const std::string& title,
             IN INT width,
             IN INT height
@@ -60,7 +52,7 @@ namespace Fk
         // Destructor
         //
 
-        ~Game() = default;
+        ~Instance() = default;
 
         //
         // Main loop
@@ -85,8 +77,6 @@ namespace Fk
     // Global game instance
     //
 
-    extern std::unique_ptr<Game> GameInstance;
+    extern std::unique_ptr<Instance> GlobalInstance;
 
 }
-
-#endif // _GAME_

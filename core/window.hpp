@@ -10,16 +10,6 @@ Abstract:
 
     Declares the Window class, which abstracts an SDL_Window and SDL_Renderer.
 
-Author:
-
-    23-Dec-2022 MobSlicer152
-
-Revision History:
-
-    23-Dec-2022    MobSlicer152
-
-        Created window.hpp.
-
 --*/
 
 #ifndef _WINDOW_
@@ -58,6 +48,7 @@ namespace Fk::Core
 
         ~Window()
         {
+            FK_LOG_TRACE("Destroying window \"{}\"", m_title);
             SDL_DestroyWindow(m_handle);
         }
 

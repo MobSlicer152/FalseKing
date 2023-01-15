@@ -1,6 +1,6 @@
 /*++
 
-Copyright (c) 2022 MobSlicer152
+Copyright (c) 2023 MobSlicer152
 
 Module Name:
 
@@ -10,20 +10,9 @@ Abstract:
 
     This module contains types and macros.
 
-Author:
-
-    MobSlicer152 23-Dec-2022
-
-Revision History:
-
-    23-Dec-2022    MobSlicer152
-
-        Created types.hpp.
-
 --*/
 
-#ifndef _TYPES_
-#define _TYPES_
+#pragma once
 
 #include <stddef.h>
 
@@ -124,5 +113,3 @@ typedef const UINT64* PCUINT64;
 typedef const UINTPTR* PCUINTPTR;
 typedef const SIZE_T* PCSIZE_T;
 typedef const SSIZE_T* PCSSIZE_T;
-
-#endif // _TYPES_

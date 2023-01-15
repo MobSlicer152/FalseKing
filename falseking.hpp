@@ -10,20 +10,9 @@ Abstract:
 
     Global header with basic shared definitions.
 
-Author:
-
-    MobSlicer152 23-Dec-2022
-
-Revision History:
-
-    23-Dec-2022    MobSlicer152
-
-        Created falseking.hpp.
-
 --*/
 
-#ifndef _FALSEKING_
-#define _FALSEKING_
+#pragma once
 
 #include <cerrno>
 #include <chrono>
@@ -60,5 +49,3 @@ Revision History:
 
 #include "aliases.hpp"
 #include "types.hpp"
-
-#endif // _FALSEKING_
